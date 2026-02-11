@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rock Paper Scissors</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .game {
+        background: rgba(0,0,0,0.45);
+        padding: 35px 45px;
+        border-radius: 20px;
+        text-align: center;
+        width: 360px;
+        box-shadow: 0 0 30px rgba(0,255,255,0.3);
+    }
+
+    .title {
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        margin-bottom: 5px;
+        color: #00e5ff;
+        text-shadow: 0 0 12px rgba(0,229,255,0.9);
+    }
+
+    .emoji {
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
+    .choices button {
+        font-size: 42px;
+        margin: 10px;
+        padding: 15px;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background: #00e5ff;
+        transition: all 0.3s ease;
+    }
+
+    .choices button:hover {
+        transform: scale(1.2) rotate(10deg);
+        background: #18ffff;
+    }
+
+    .status {
+        min-height: 55px;
+        margin: 20px 0;
+        font-size: 18px;
+    }
+
+    .thinking {
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        0% { opacity: 0.3; }
+        50% { opacity: 1; }
+        100% { opacity: 0.3; }
+    }
+
+    .score {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .reset {
+        background: #ff1744;
+        border: none;
+        padding: 10px 28px;
+        border-radius: 20px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .reset:hover {
+        background: #ff5252;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="game">
+    <div class="title">ROCK PAPER SCISSORS</div>
+    <div class="emoji">🪨 📄 ✂️</div>
+
+    <div class="choices">
+        <button onclick="play('Rock')">🪨</button>
+        <button onclick="play('Paper')">📄</button>
+        <button onclick="play('Scissors')">✂️</button>
+    </div>
+
+    <div class="status" id="status">
+        Choose your weapon 😎
+    </div>
+
+    <div class="score">
+        You: <span id="player">0</span> |
+        CPU: <span id="cpu">0</span>
+    </div>
+
+    <button class="reset" onclick="resetGame()">Reset</button>
+</div>
+
+<script>
+    let playerScore = 0;
+    let cpuScore = 0;
+
+    function play(playerChoice) {
+        const status = document.getElementById("status");
+        status.innerHTML = "<span class='thinking'>Computer thinking...</span>";
+
+        setTimeout(() => {
+            const choices = ["Rock", "Paper", "Scissors"];
+            const cpuChoice = choices[Math.floor(Math.random() * 3)];
+
+            let result = `You: ${emoji(playerChoice)} | CPU: ${emoji(cpuChoice)}<br>`;
+
+            if (playerChoice === cpuChoice) {
+                result += "😐 It's a Tie!";
+            } 
+            else if (
+                (playerChoice === "Rock" && cpuChoice === "Scissors") ||
+                (playerChoice === "Paper" && cpuChoice === "Rock") ||
+                (playerChoice === "Scissors" && cpuChoice === "Paper")
+            ) {
+                result += "🔥 You WIN!";
+                playerScore++;
+            } 
+            else {
+                result += "💀 You LOSE!";
+                cpuScore++;
+            }
+
+            status.innerHTML = result;
+            document.getElementById("player").innerText = playerScore;
+            document.getElementById("cpu").innerText = cpuScore;
+        }, 800);
+    }
+
+    function emoji(choice) {
+        if (choice === "Rock") return "🪨";
+        if (choice === "Paper") return "📄";
+        return "✂️";
+    }
+
+    function resetGame() {
+        playerScore = 0;
+        cpuScore = 0;
+        document.getElementById("player").innerText = 0;
+        document.getElementById("cpu").innerText = 0;
+        document.getElementById("status").innerText = "Choose your weapon 😎";
+    }
+</script>
+
+</body>
+</html>

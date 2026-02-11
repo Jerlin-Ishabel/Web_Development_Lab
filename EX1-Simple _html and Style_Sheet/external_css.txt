@@ -1,0 +1,57 @@
+body {
+    background-color: #a0dfd9;
+}
+
+h1 {
+    color: blue;
+    text-align: left;
+    font-size: 16px; /* corrected from 10px for readability */
+    background: #ffffff;
+    width: 600px;
+    padding: 5px;
+}
+
+h2 {
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+
+.evenpara {
+    font-family: Helvetica, sans-serif; /* corrected spelling */
+    font-size: 12px;
+    word-spacing: 3px;
+    border: 2px dashed blue;
+    width: 500px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.oddpara {
+    margin-left: 100px;
+    font-family: Helvetica, sans-serif; /* corrected spelling */
+    font-size: 12px;
+    word-spacing: 3px;
+    border: 2px dashed blue;
+    width: 500px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+table {
+    margin-left: 100px;
+    width: 300px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+tr {
+    width: 300px;
+}
+
+td {
+    width: 100px;
+    border: 2px solid blue;
+    text-align: center;
+    padding: 5px;
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Menu</title>
+</head>
+<body>
+    <h3>Photo Gallery</h3>
+    <ul style="list-style:none; padding-left:0;">
+        <li><a href="img1.jpg" target="display_frame">Image 1</a></li>
+        <li><a href="img2.jpg" target="display_frame">Image 2</a></li>
+        <li><a href="img3.jpg" target="display_frame">Image 3</a></li>
+    </ul>
+</body>
+</html>

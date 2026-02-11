@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example of External CSS</title>
+    <link rel="stylesheet" href="external.css">
+</head>
+
+<body>
+    <h1>My Favourite Chocolates</h1>
+
+    <table>
+        <tr>
+            <td><h2>Galaxy</h2></td>
+            <td><h2>Mars Bar</h2></td>
+            <td><h2>Yorkie</h2></td>
+        </tr>
+        <tr>
+            <td><h2>Dark</h2></td>
+            <td><h2>Buttons</h2></td>
+            <td><h2>Wispa</h2></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h1>My Favourite Chocolate Quotes</h1>
+
+    <p class="evenpara">
+        Charles M.<br>
+        All you need is love.
+    </p>
+
+    <p class="oddpara">
+        Jo Brand<br>
+        Anything is good.
+    </p>
+
+    <p class="evenpara">
+        Sandra<br>
+        The greatest tragedies were written.
+    </p>
+
+    <p class="oddpara">
+        Michael<br>
+        Chemically speaking, chocolate really.
+    </p>
+
+</body>
+</html>
